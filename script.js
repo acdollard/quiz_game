@@ -11,3 +11,27 @@
 
 //scores are increased by adding right answers and answering in a shorter amount of time (if functions for 
 // correct answer, and for submitting within a set increment)
+
+
+
+//creating variables
+var startButtonEl = document.getElementById("start_button");
+var mainDiv = document.getElementById("content_container");
+var Food = document.getElementById("food");
+
+
+
+//on click of start button, change text content of main div to first question w/ buttons 
+
+startButtonEl.addEventListener("click", function(){
+  var newDiv = document.createElement("div");
+  newDiv.textContent = questions[0].answer; 
+  mainDiv.appendChild(newDiv);
+  Food.textContent = "";
+  startButtonEl.parentNode.removeChild(startButtonEl);
+  
+})
+
+
+
+
