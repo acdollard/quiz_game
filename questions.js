@@ -1,6 +1,6 @@
 var questions = [
     {
-        title: "Chekov's _____ states that if something is present in the story, it should be used.",
+        title: "The dramaturgical principle Chekov's _____ states that if something is present in the story, it should be used.",
         choices: ["gun", "harpsichord", "labrador", "potato"],
         answer: "gun",
     },

@@ -37,39 +37,55 @@ startButtonEl.addEventListener("click", function(){
 
 function startQuiz(){
     
- Food.textContent = questions[0].title;
+    var i = 0;
+
+  Food.textContent = questions[i].title;
   
   var li1 = document.createElement("li");
   var button1 = document.createElement("button");
-  button1.textContent = questions[0].choices[0];
+  button1.textContent = questions[i].choices[0];
   listEl.appendChild(li1);
   li1.appendChild(button1);
 
 
   var li2 = document.createElement("li");
   var button2 = document.createElement("button");
-  button2.textContent = questions[0].choices[1];
+  button2.textContent = questions[i].choices[1];
   listEl.appendChild(li2);
   li2.appendChild(button2); 
 
   var li3 = document.createElement("li");
   var button3 = document.createElement("button");  
-  button3.textContent = questions[0].choices[2]; 
+  button3.textContent = questions[i].choices[2]; 
   listEl.appendChild(li3); 
   li3.appendChild(button3); 
 
   var li4 = document.createElement("li");
   var button4 = document.createElement("button");
-  button4.textContent = questions[0].choices[3]; 
+  button4.textContent = questions[i].choices[3]; 
   listEl.appendChild(li4); 
   li4.appendChild(button4);  
+
+
+//eventListener to cycle through questions
+questionsDiv.addEventListener("click", function() {
+    if(event.target.matches("button")){
+        i++;
+        Food.textContent = questions[i].title;
+        button1.textContent = questions[i].choices[0];
+        button2.textContent = questions[i].choices[1];
+        button3.textContent = questions[i].choices[2];
+        button4.textContent = questions[i].choices[3];
+    }
+});
+
   }
   
 
 
 
 Food.setAttribute("style", "text-size:25px", "text-align:center")
-listEl.setAttribute("style",)
+
 
 
 //add data index to the button
