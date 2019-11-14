@@ -5,7 +5,7 @@ var questions = [
         answer: "gun",
     },
     {
-        title: "\"All happy families are alike, every unhappy family is unhappy in it's own way.\" is a quote by:",
+        title: "\"All happy families are alike, each unhappy family is unhappy in it's own way.\" is a quote by:",
         choices: ["Dostoyevsky", "Hemmingway", "Tolstoy", "Steinbeck"],
         answer: "Tolstoy",
     },
@@ -15,7 +15,7 @@ var questions = [
         answer: "Don Quixote",
     },
     {
-        title: "Ulysses, the novel by James Joyce, takes place in the city of:",
+        title: "The majority of James Joyce's works take place in the city of:",
         choices: ["London", "Dublin", "Hong Kong", "Paris"],
         answer: "Dublin",
     },
