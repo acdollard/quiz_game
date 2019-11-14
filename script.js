@@ -69,15 +69,22 @@ function startQuiz(){
 
 //eventListener to cycle through questions
 questionsDiv.addEventListener("click", function() {
-    if(event.target.matches("button")){
+    //when iterator reaches end of survey, removes list Element and presents score 
+    if(i >= questions.length -1){
+        Food.textContent = "Quiz Done!";
+        listEl.parentNode.removeChild(listEl);
+    }
+    else if(event.target.matches("button")){
         i++;
         Food.textContent = questions[i].title;
         button1.textContent = questions[i].choices[0];
         button2.textContent = questions[i].choices[1];
         button3.textContent = questions[i].choices[2];
         button4.textContent = questions[i].choices[3];
-    }
+    };
 });
+
+    
 
   }
   
