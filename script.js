@@ -15,60 +15,61 @@
 
 //creating variables
 var startButtonEl = document.getElementById("start_button");
-var mainDiv = document.getElementById("content_container");
+var titleDiv = document.getElementById("title_div");
 var Food = document.getElementById("food");
+var listEl = document.getElementById("list");
+var questionsDiv = document.getElementById("questions_div");
+
+//create and append 
 
 
 
-//on click of start button, change text content of main div to first question w/ buttons 
-
+//on click of start button, clear text from the title div, remove start button, invoke renderQuestions function
 startButtonEl.addEventListener("click", function(){
 
     startButtonEl.parentNode.removeChild(startButtonEl);
     Food.textContent = "";
-    renderQuestions()
+    startQuiz()
 })
 
 
 
 
-function renderQuestions(){
+function startQuiz(){
     
- var titleDiv= document.createElement("div")
- titleDiv.textContent = questions[0].title;
- mainDiv.appendChild(titleDiv); 
-
-
-  var li1 = document.createElement("div");
+ Food.textContent = questions[0].title;
+  
+  var li1 = document.createElement("li");
   var button1 = document.createElement("button");
   button1.textContent = questions[0].choices[0];
-  mainDiv.appendChild(li1);
-  mainDiv.appendChild(button1);
+  listEl.appendChild(li1);
+  li1.appendChild(button1);
 
 
-  var li2 = document.createElement("div");
+  var li2 = document.createElement("li");
   var button2 = document.createElement("button");
   button2.textContent = questions[0].choices[1];
-  mainDiv.appendChild(li2);
-  mainDiv.appendChild(button2); 
+  listEl.appendChild(li2);
+  li2.appendChild(button2); 
 
-  var li3 = document.createElement("div");
+  var li3 = document.createElement("li");
   var button3 = document.createElement("button");  
   button3.textContent = questions[0].choices[2]; 
-  mainDiv.appendChild(li3); 
-  mainDiv.appendChild(button3); 
+  listEl.appendChild(li3); 
+  li3.appendChild(button3); 
 
-  var li4 = document.createElement("div");
+  var li4 = document.createElement("li");
   var button4 = document.createElement("button");
   button4.textContent = questions[0].choices[3]; 
-  mainDiv.appendChild(li4); 
-  mainDiv.appendChild(button4);  
+  listEl.appendChild(li4); 
+  li4.appendChild(button4);  
   }
   
 
 
 
 Food.setAttribute("style", "text-size:25px", "text-align:center")
+listEl.setAttribute("style",)
 
 
 //add data index to the button
