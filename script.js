@@ -6,8 +6,7 @@
 //move through an object of arrays per each click
 //on click, values disappear and are replaced by next item 
 
-//set interval timer on click
-//if timer runs out, show high score 
+
 
 //scores are increased by adding right answers and answering in a shorter amount of time (if functions for 
 // correct answer, and for submitting within a set increment)
@@ -60,10 +59,10 @@ function renderQuestions(){
   mainDiv.appendChild(button3); 
 
   var li4 = document.createElement("div");
-  var button4 = document.createElement('button');
+  var button4 = document.createElement("button");
   button4.textContent = questions[0].choices[3]; 
   mainDiv.appendChild(li4); 
-  mainDiv.li4.appendChild(button4); 
+  mainDiv.appendChild(button4);  
   }
   
 
@@ -72,8 +71,14 @@ function renderQuestions(){
 Food.setAttribute("style", "text-size:25px", "text-align:center")
 
 
-
+//add data index to the button
+  //add var grabbing the data index of the button
+    //function to increment the by making button's textContent = questions[var++] 
 //one function to render questions, another to change the data-index of the elements
+
+
+//set interval timer on click
+//if timer runs out, show high score 
 
 
 
