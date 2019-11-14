@@ -5,7 +5,7 @@ var questions = [
         answer: "gun",
     },
     {
-        title: "All happy families are alike, every unhappy family is unhappy in it's own way... is a quote by:",
+        title: "\"All happy families are alike, every unhappy family is unhappy in it's own way.\" is a quote by:",
         choices: ["Dostoyevsky", "Hemmingway", "Tolstoy", "Steinbeck"],
         answer: "Tolstoy",
     },
