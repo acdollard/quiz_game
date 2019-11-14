@@ -1,17 +1,3 @@
-//title text.content = title of questions
-//<unordered list> with 4 buttons
-//button text.content is questions.choices
-
-//click button, appears the first in a list of arrays (change text content of div)
-//move through an object of arrays per each click
-//on click, values disappear and are replaced by next item 
-
-
-
-//scores are increased by adding right answers and answering in a shorter amount of time (if functions for 
-// correct answer, and for submitting within a set increment)
-
-
 
 //creating variables
 var startButtonEl = document.getElementById("start_button");
@@ -29,14 +15,15 @@ var button3 = document.createElement("button");
 var li4 = document.createElement("li");
 var button4 = document.createElement("button");
 var rightOrWrong = document.getElementById("right_or_wrong"); 
+var timerEl = document.getElementById("timeLeft");
 
-//create and append 
 
 //on click of start button, clear text from the title div, remove start button, invoke renderQuestions function
 startButtonEl.addEventListener("click", function(){
     startButtonEl.parentNode.removeChild(startButtonEl);
     Food.textContent = "";
-    startQuiz()
+    timer();
+    startQuiz();
 })
 
 //display question in main div, render list items and buttons for each question and populate them with text from questions array
@@ -84,18 +71,9 @@ questionsDiv.addEventListener("click", function() {
     //     showScore.textContent = ("Your score: ") + score; 
     //     questionsDiv.appendChild(showScore);
     // }
-
-
-
     
-    //this if statement ends the survey after the last question, removes the list of questions, and shows the score 
-
      if(i >= questions.length -1){
-        Food.textContent = "Quiz Done!";
-        listEl.parentNode.removeChild(listEl);
-        var showScore = document.createElement("div");
-        showScore.textContent = ("Your score: ") + score; 
-        questionsDiv.appendChild(showScore);
+        finishQuiz()
     }
 
         //cycling through questions on each click  
@@ -105,14 +83,36 @@ questionsDiv.addEventListener("click", function() {
         button2.textContent = questions[i].choices[1];
         button3.textContent = questions[i].choices[2];
         button4.textContent = questions[i].choices[3];
-    
+    }
+});
+  }
+
+//finishQuiz changes text in the title div, removes the list of buttons and displays score
+function finishQuiz(){
+      Food.textContent = "Quiz Done!";
+        listEl.parentNode.removeChild(listEl);
+        var showScore = document.createElement("div");
+        showScore.textContent = ("Your score: ") + score; 
+        questionsDiv.appendChild(showScore);
     }
 
-});
 
-    
+//timer element 
+function timer(){
+    var seconds = questions.length * 10;
+    var countdown = setInterval( function() {
+        timerEl.textContent = seconds;
+        seconds--; 
 
-  }
+        if (seconds === 0) {
+            timerEl.textContent = "";
+            clearInterval(countdown);
+            finishQuiz();
+          }
+    }, 1000
+    )
+}
+
   
 
 
@@ -123,14 +123,7 @@ rightOrWrong.setAttribute("style", "text-size:10px", "color:grey", "text-align:c
 
 
 
-//add data index to the button
-  //add var grabbing the data index of the button
-    //function to increment the by making button's textContent = questions[var++] 
-//one function to render questions, another to change the data-index of the elements
 
-
-//set interval timer on click
-//if timer runs out, show high score 
 
 
 

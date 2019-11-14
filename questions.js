@@ -10,7 +10,7 @@ var questions = [
         answer: "Tolstoy",
     },
     {
-        title: "This novel was voted the greatest novel of all time in 2002 by a survey of 100 authors",
+        title: "This novel was voted the greatest novel of all time in 2002 in a survey of over one hundred authors",
         choices: ["Crime and Punishment", "The Old Man and the Sea", "In Search of Lost Time", "Don Quixote"],
         answer: "Don Quixote",
     },
