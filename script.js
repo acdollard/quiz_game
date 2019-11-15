@@ -16,7 +16,8 @@ var li4 = document.createElement("li");
 var button4 = document.createElement("button");
 var rightOrWrong = document.getElementById("right_or_wrong"); 
 var timerEl = document.getElementById("timeLeft");
-
+var initials = document.createElement("input");
+var submitButton = document.createElement("button");
 
 
 
@@ -27,6 +28,7 @@ startButtonEl.addEventListener("click", function(){
     timer();
     startQuiz();
 })
+
 
 //display question in main div, render list items and buttons for each question and populate them with text from questions array
 function startQuiz(){
@@ -64,7 +66,7 @@ questionsDiv.addEventListener("click", function() {
     } else {rightOrWrong.textContent = "Wrong!"}
     
      if(i >= questions.length -1){
-        finishQuiz()
+        return window.location.assign("end_screen.html");
     }
         //cycling through questions on each click  
         i++;
@@ -84,11 +86,18 @@ function finishQuiz(){
         var showScore = document.createElement("div");
         showScore.textContent = ("Your score: ") + score; 
         questionsDiv.appendChild(showScore);
+        //create input for initals 
+        
+        submitButton.textContent = "Enter your name"; 
+        questionsDiv.appendChild(initials);
+        questionsDiv.appendChild(submitButton); 
     }
 
-//timer element 
+
+
+//timer element
 function timer(){
-    var seconds = questions.length * 10;
+    var seconds = questions.length * 5;
     var countdown = setInterval( function() {
         timerEl.textContent = seconds;
         seconds--; 
@@ -96,13 +105,34 @@ function timer(){
         if (seconds === 0) {
             timerEl.textContent = "";
             clearInterval(countdown);
-            finishQuiz();
+            return window.location.assign("end_screen.html");
+
           }
     }, 1000
     )
 }
 
-  
+
+function viewHighScore (){
+    //clear questionsDiv
+    //c
+}
+
+
+function saveHighScore() {
+    let highScoresEl = [];
+    let yourScore = {
+        name:initials.value,
+        score:score
+    };
+    highScoresEl.push(yourScore);
+    localStorage.setItem("highscoresEl", JSON.stringify(highScoresEl));
+}
+
+submitButton.addEventListener("click",function(){
+  saveHighScore();
+} ); 
+
 
 
 
@@ -110,6 +140,10 @@ Food.setAttribute("style", "text-size:25px", "text-align:center")
 rightOrWrong.setAttribute("style", "text-size:10px", "color:grey", "text-align:center")
 
 
+
+//create empty object
+//push input.value and score into it onclick
+//store in local storage 
 
 
 

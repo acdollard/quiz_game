@@ -5,3 +5,12 @@
 button {
     margin:5px
 }
+
+html{
+    background-color: aquamarine;
+
+}
+
+#tryAgainBtn{
+    float:right;
+}
