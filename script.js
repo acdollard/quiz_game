@@ -64,6 +64,8 @@ questionsDiv.addEventListener("click", function() {
         score = score+10; 
         rightOrWrong.textContent = "Right!" 
     } else {rightOrWrong.textContent = "Wrong!"}
+
+    localStorage.setItem("score", score)
     
      if(i >= questions.length -1){
         return window.location.assign("end_screen.html");
@@ -79,19 +81,7 @@ questionsDiv.addEventListener("click", function() {
 });
   }
 
-//finishQuiz changes text in the title div, removes the list of buttons and displays score
-function finishQuiz(){
-      Food.textContent = "Quiz Done!";
-        listEl.parentNode.removeChild(listEl);
-        var showScore = document.createElement("div");
-        showScore.textContent = ("Your score: ") + score; 
-        questionsDiv.appendChild(showScore);
-        //create input for initals 
-        
-        submitButton.textContent = "Enter your name"; 
-        questionsDiv.appendChild(initials);
-        questionsDiv.appendChild(submitButton); 
-    }
+
 
 
 
@@ -113,25 +103,9 @@ function timer(){
 }
 
 
-function viewHighScore (){
-    //clear questionsDiv
-    //c
-}
 
 
-function saveHighScore() {
-    let highScoresEl = [];
-    let yourScore = {
-        name:initials.value,
-        score:score
-    };
-    highScoresEl.push(yourScore);
-    localStorage.setItem("highscoresEl", JSON.stringify(highScoresEl));
-}
 
-submitButton.addEventListener("click",function(){
-  saveHighScore();
-} ); 
 
 
 
