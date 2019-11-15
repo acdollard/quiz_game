@@ -22,7 +22,7 @@ var questions = [
     {
         title: "This contemporary Japanese author is popular all over the world for his stories of magical realism",
         choices: ["Shusaku Endo", "Haruki Murakami", "Eiji Yoshikawa", "Kazuo Ishiguro"],
-        answer: "Haruki Murakamai",
+        answer: "Haruki Murakami",
     }
    
 ]

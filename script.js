@@ -18,7 +18,9 @@ var rightOrWrong = document.getElementById("right_or_wrong");
 var timerEl = document.getElementById("timeLeft");
 
 
-//on click of start button, clear text from the title div, remove start button, invoke renderQuestions function
+
+
+//on click of start button, clear text from the title div, remove start button, invoke renderQuestions function, start timer
 startButtonEl.addEventListener("click", function(){
     startButtonEl.parentNode.removeChild(startButtonEl);
     Food.textContent = "";
@@ -60,22 +62,10 @@ questionsDiv.addEventListener("click", function() {
         score = score+10; 
         rightOrWrong.textContent = "Right!" 
     } else {rightOrWrong.textContent = "Wrong!"}
-
-    //this if statement is meant to end the survey after the last question AND add to the score, if the user gets the last question correct
-    // if(i >= questions.length -1 && event.target.textContent === questions[i].answer){        
-    //     score = score+10; 
-    //     rightOrWrong.textContent = "Right!" ;
-    //     Food.textContent = "Quiz Done!";
-    //     listEl.parentNode.removeChild(listEl);
-    //     var showScore = document.createElement("div");
-    //     showScore.textContent = ("Your score: ") + score; 
-    //     questionsDiv.appendChild(showScore);
-    // }
     
      if(i >= questions.length -1){
         finishQuiz()
     }
-
         //cycling through questions on each click  
         i++;
         Food.textContent = questions[i].title;
@@ -95,7 +85,6 @@ function finishQuiz(){
         showScore.textContent = ("Your score: ") + score; 
         questionsDiv.appendChild(showScore);
     }
-
 
 //timer element 
 function timer(){
