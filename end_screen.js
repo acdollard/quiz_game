@@ -20,7 +20,6 @@ function saveHighScores(){
         score: mostRecentScore,
         name: nameInputEl.value
     }
-    debugger;
     highscore.push(score); 
     localStorage.setItem("highscore", JSON.stringify(highscore))
 };
