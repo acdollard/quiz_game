@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Game Over!</title>
+    <title>HighScores</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
         <div id="top_div" class="container-fluid">
@@ -16,20 +15,19 @@
         </div>
                 
 
+    <table class='table col-8 text-center mt-5 mb-5'>
+        <thead>
+          <tr>
+            <th>SCORE</th>
+            <th>NAME</th>
+          </tr>
+        </thead>
+        <tbody id='table_body'>
+        
+        </tbody>
+        </table>
 
-    <div class="container-fluid text-center mt-5 pb-4">
-        <h2>That's all she wrote!</h2>
-        <div class="container text-center pb-4 " id="scoreDiv">
 
-        </div>
-        <form>
-            <input type="text" placeholder="Your Name" id="nameInput">
-            <button id="sumbitScoreBtn">Submit Score</button>
-        </form>
-    </div>
-    
-
-    <script src="end_screen.js"></script>
-    <script src="questions.js"></script>
+<script src="high_score.js"></script>
 </body>
 </html>

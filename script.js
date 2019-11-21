@@ -18,6 +18,7 @@ var rightOrWrong = document.getElementById("right_or_wrong");
 var timerEl = document.getElementById("timeLeft");
 var initials = document.createElement("input");
 var submitButton = document.createElement("button");
+let viewHighScores = document.getElementById("highScores");
 
 
 
@@ -102,7 +103,9 @@ function timer(){
     )
 }
 
-
+viewHighScores.addEventListener("click", function(){
+    return window.location.assign("high_score_screen.html")
+});
 
 
 

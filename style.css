@@ -14,3 +14,7 @@ html{
 #tryAgainBtn{
     float:right;
 }
+
+.table{
+    margin: auto; 
+}
