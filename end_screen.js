@@ -37,34 +37,7 @@ submitScoreEl.addEventListener("click", function(){
     saveHighScores();
 })
 
-viewHighScores.addEventListener("click", function(){
-    
-    let scoreDiv = document.createElement("DIV");
-    scoreDiv.innerHTML = 
-    `<table class='table'>
-    <thead>
-      <tr>
-        <th>score</th>
-        <th>First Name</th>
-      </tr>
-    </thead>
-    <tbody id='table_body'>
-    
-    </tbody>
-    </table>`
 
-    for (let i=0; i <highscore.length; i++){
-        debugger;
-    let tableBody = document.getElementById("table_body");
-    let row = document.table.createElement("<tr>");
-    let name= document.createElement("<th>");
-       name.textContent = highscore[i].score + highscore[i].name
-       row.append(name);
-       tableBody.append(row);
-    }
-    topDivEl.appendChild(scoreDiv);
-
-})
 
 
 
