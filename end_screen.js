@@ -15,7 +15,7 @@ if (highscores == null) {
 }
 
 console.log("Last score: " + score);
-console.log("Highscores: " + highscores[0])
+console.log("Highscores: " + highscores)
  
 
 tryAgain.addEventListener("click", function(){
@@ -34,9 +34,8 @@ function saveHighScores(){
     }
     console.log(playerEntry.name)
     debugger;
-    highscores.push(playerEntry)
-    console.log
-    localStorage.setItem("highscores", JSON.stringify(highscores))
+    highscores.push(playerEntry);
+    localStorage.setItem("highscores", JSON.stringify(highscores));
 };
 
 
@@ -45,6 +44,7 @@ function saveHighScores(){
 
 submitScoreEl.addEventListener("click", function(){
     saveHighScores();
+    window.location.assign("high_score_screen.html");
 })
 
 

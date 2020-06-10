@@ -71,7 +71,7 @@ questionsDiv.addEventListener("click", function() {
         //put score in local storage
         localStorage.setItem("score", score);
         console.log("your score: " + score);
-        // return window.location.assign("end_screen.html");
+        return window.location.assign("end_screen.html");
     }
         //cycling through questions on each click  
         i++;
