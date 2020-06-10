@@ -26,16 +26,21 @@ viewHighScores.addEventListener("click", function(){
     return window.location.assign("high_score_screen.html")
 });
 
-
+//function to create an playerEntry object, with the player's score and name, add it to the array of scores, and re-save to local storage
 function saveHighScores(){
     let playerEntry = {
         score: mostRecentScore,
         name: nameInputEl.value
     }
-    console.log(playerEntry.name)
-    debugger;
+    console.log(playerEntry.name);
+    if(nameInputEl.value == ""){
+        alert("Must enter a name!")
+
+    } else
     highscores.push(playerEntry);
     localStorage.setItem("highscores", JSON.stringify(highscores));
+    console.log("howdy")
+
 };
 
 
@@ -44,7 +49,9 @@ function saveHighScores(){
 
 submitScoreEl.addEventListener("click", function(){
     saveHighScores();
-    window.location.assign("high_score_screen.html");
+    debugger;
+    //still not changing screens when clicked for some reason
+    return window.location.assign("high_score_screen.html")
 })
 
 
