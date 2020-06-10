@@ -4,11 +4,18 @@ let nameInputEl = document.getElementById("nameInput")
 let submitScoreEl = document.getElementById("sumbitScoreBtn")
 let mostRecentScore = localStorage.getItem("score")
 scoreDivEl.textContent = "Your score: " + mostRecentScore;
-let viewHighScores = document.getElementById("highScores");
-let highscore = JSON.parse(localStorage.getItem("highscore")); 
+let highscores = JSON.parse(localStorage.getItem("highscores"))
+let score = JSON.parse(localStorage.getItem("score")); 
 let topDivEl = document.getElementById("top_div")
+let viewHighScores= document.getElementById("highScores")
 
+if (highscores == null) {
 
+    highscores = [];
+}
+
+console.log("Last score: " + score);
+console.log("Highscores: " + highscores[0])
  
 
 tryAgain.addEventListener("click", function(){
@@ -21,15 +28,18 @@ viewHighScores.addEventListener("click", function(){
 
 
 function saveHighScores(){
-    let score = {
+    let playerEntry = {
         score: mostRecentScore,
         name: nameInputEl.value
     }
-    highscore.push(score); 
-    localStorage.setItem("highscore", JSON.stringify(highscore))
+    console.log(playerEntry.name)
+    debugger;
+    highscores.push(playerEntry)
+    console.log
+    localStorage.setItem("highscores", JSON.stringify(highscores))
 };
 
-console.log()  
+
 
 
 

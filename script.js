@@ -66,10 +66,12 @@ questionsDiv.addEventListener("click", function() {
         rightOrWrong.textContent = "Right!" 
     } else {rightOrWrong.textContent = "Wrong!"}
 
-    localStorage.setItem("score", score)
     
-     if(i >= questions.length -1){
-        return window.location.assign("end_screen.html");
+    if(i >= questions.length -1){
+        //put score in local storage
+        localStorage.setItem("score", score);
+        console.log("your score: " + score);
+        // return window.location.assign("end_screen.html");
     }
         //cycling through questions on each click  
         i++;
